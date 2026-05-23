@@ -93,6 +93,20 @@ functions:
               - X-Api-Key
               - X-Amz-Date
               - X-Amz-Security-Token
+  refresh:
+    handler: src/handlers/refresh.refresh
+    events:
+      - http:
+          method: post
+          path: /users/refresh
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Date
+              - X-Amz-Security-Token
   getUser:
     handler: src/handlers/getUser.getUser
     events:
